@@ -18,6 +18,7 @@ class TestNumbaPointGeohash(unittest.TestCase):
     def test_encode(self):
         self.assertEqual(pgh.nb_point_encode(42.6, -5.6), "ezs42e44yx96")
         self.assertEqual(pgh.nb_point_encode(42.6, -5.6, precision=5), "ezs42")
+        self.assertEqual(pgh.nb_point_encode(0.0, -5.6, precision=5), 'ebh00')
 
     def test_decode(self):
         self.assertEqual(pgh.nb_point_decode("ezs42"), (42.6, -5.6))

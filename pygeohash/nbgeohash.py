@@ -138,14 +138,14 @@ def nb_point_encode(
     while n < precision:
         if even:
             mid = (lon_interval_neg + lon_interval_pos) / 2
-            if longitude > mid:
+            if longitude >= mid:
                 ch |= bits[bit]
                 lon_interval_neg = mid
             else:
                 lon_interval_pos = mid
         else:
             mid = (lat_interval_neg + lat_interval_pos) / 2
-            if latitude > mid:
+            if latitude >= mid:
                 ch |= bits[bit]
                 lat_interval_neg = mid
             else:
